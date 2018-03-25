@@ -24,13 +24,34 @@ public class Ticket {
     private String location;
     private String time;
     private String issued;
-    private Boolean paid;
+    private String paid;
 
+    
+    /**
+     * 
+     */
     public Ticket() {
     }
 
+    
+    /**
+     * 
+     * @param ticket
+     * @param license
+     * @param permit
+     * @param state
+     * @param vehicle
+     * @param color
+     * @param violationType
+     * @param date
+     * @param location
+     * @param time
+     * @param issued
+     * @param paid 
+     * @
+     */
     public Ticket(String ticket, String license, String permit, String state, String vehicle, String color, 
-                  String violationType, String date, String location, String time, String issued, Boolean paid){
+                  String violationType, String date, String location, String time, String issued, String paid){
         this.ticket = ticket;
         this.license = license;
         this.permit = permit;
@@ -202,14 +223,14 @@ public class Ticket {
     /**
      * @return the paid
      */
-    public Boolean getPaid() {
+    public String getPaid() {
         return paid;
     }
 
     /**
      * @param paid the paid to set
      */
-    public void setPaid(Boolean paid) {
+    public void setPaid(String paid) {
         this.paid = paid;
     }
 

@@ -140,30 +140,19 @@ public class TicketView extends BorderPane{
     }
   
     public void updateTicketView(Ticket currentTicket){
-
-            String ticket  ="";
-            String license="";
-            String permit    ="";
-            String state = "";
-            String vehicle = "";
-            String color = "";
-            String violation = "";
-            String date = "";
-            String location = "";
-            String time = "";
-            String issued = "";
            
-            ticket = currentTicket.getTicket();
-            license = currentTicket.getLicense();
-            permit=currentTicket.getPermit();
-            state = currentTicket.getState();
-            vehicle = currentTicket.getVehicle();
-            color = currentTicket.getColor();
-            violation = currentTicket.getViolation();
-            date = currentTicket.getDate();
-            location = currentTicket.getLocation();
-            time = currentTicket.getTime();
-            issued = currentTicket.getIssued();
+        String ticket = currentTicket.getTicket();
+        String license = currentTicket.getLicense();
+        String permit=currentTicket.getPermit();
+        String state = currentTicket.getState();
+        String vehicle = currentTicket.getVehicle();
+        String color = currentTicket.getColor();
+        String violation = currentTicket.getViolation();
+        String date = currentTicket.getDate();
+        String location = currentTicket.getLocation();
+        String time = currentTicket.getTime();
+        String issued = currentTicket.getIssued();
+        String paid = currentTicket.getPaid();
 			
 	this.getChildren().clear();
         ticketsText.setText(" ");
@@ -191,7 +180,7 @@ public class TicketView extends BorderPane{
         hbox2.setSpacing(90);
         hbox5.setSpacing(80);
         hbox7.setSpacing(120);
-                hbox9.setSpacing(80);
+        hbox9.setSpacing(80);
 
         gridpane.add(hbox2, 1, 1);
         gridpane.add(hbox4,1, 2);
@@ -204,7 +193,7 @@ public class TicketView extends BorderPane{
   
         hbox0.setAlignment(Pos.CENTER);
         
-          ticketsText.setText("Ticket: "+ticket+"\n"
+        ticketsText.setText("Ticket: "+ticket+"\n"
                             +"License: "+license+"\n"
                             +"Permit: "+permit+"\n"
                             +"State: "+state+"\n"
@@ -214,7 +203,8 @@ public class TicketView extends BorderPane{
                             +"Date: "+date+"\n"
                             +"Location: "+location+"\n"
                             +"Time: "+time+"\n"
-                            +"Issued by: "+issued );
+                            +"Issued by: "+issued+"\n"
+                            +"Paid Status: "+paid);
        
         ticketsText.setLineSpacing(3);
         ticketsText.setFont(Font.font(15));
@@ -357,80 +347,6 @@ public class TicketView extends BorderPane{
         this.setLeft(vbox1);
         this.setRight(payment);
         this.setBottom(ticketsText);	
-	}
-    
-    public void paymentView(Ticket currentTicket){
-
-	String ticket  ="";
-	String license="";
-	String permit    ="";
-	String state = "";
-	String vehicle = "";
-	String color = "";
-	String violation = "";
-	String date = "";
-	String location = "";
-	String time = "";
-	String issued = "";
-			
-	this.getChildren().clear();
-        imageIV.setFitHeight(50);
-        imageIV.setFitWidth(50);
-        HBox hbox0 = new HBox(imageIV, titleLabel);
-        titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-
-        payment.setText(paystring);
-        payment.setTextAlignment(TextAlignment.LEFT);
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-        
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-        HBox hbox10 = new HBox(violationTF, vehicleTF);
-
-        hbox2.setSpacing(90);
-        hbox5.setSpacing(80);
-        hbox7.setSpacing(120);
-        hbox9.setSpacing(80);
-
-        gridpane.add(hbox2, 1, 1);
-        gridpane.add(hbox4,1, 2);
-        gridpane.add(hbox5, 1, 3);
-        gridpane.add(hbox6, 1, 4);
-        gridpane.add(hbox7, 1, 5);
-        gridpane.add(hbox8, 1, 6);
-        gridpane.add(hbox9, 1, 7);
-        gridpane.add(hbox10, 1, 8);
-        
-        hbox0.setAlignment(Pos.CENTER);
-        ticketsText.setTextAlignment(TextAlignment.CENTER);
-        
-        boolean paid = currentTicket.getPaid();
-        ticket = currentTicket.getTicket();
-        
-        if(paid==true){
-            ticketsText.setText("Ticket: "+ ticket+" is now paid.");
-        }
-        else {
-             ticketsText.setText("Ticket: "+ ticket+" is now unpaid.");
-        }
-       
-        ticketsText.setLineSpacing(10);
-        ticketsText.setFont(Font.font(15));
-        ticketsText.setTextAlignment(TextAlignment.LEFT);
-		
-	this.setTop(hbox0);
-        this.setCenter(gridpane);
-        this.setLeft(vbox1);
-        this.setRight(payment);
-        this.setBottom(ticketsText);
 	}
 
     public void invalidPay(){
@@ -580,7 +496,7 @@ public class TicketView extends BorderPane{
                 issuedTF.clear();
 		
 	}
-
+    
     /**
      * @return the ticketLabel
      */

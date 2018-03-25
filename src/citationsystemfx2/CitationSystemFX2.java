@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package citationsystemfx2;
+package citationsystemmvc;
 
 import Ticket.TicketController;
 import Ticket.TicketModel;
 import Ticket.TicketView;
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -16,20 +17,20 @@ import javafx.stage.Stage;
  *
  * @author Selvera
  */
-public class CitationSystemFX2 extends Application {
-    
+public class CitationSystemMVC extends Application {
+
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
         TicketView ticketview = new TicketView();
         TicketModel ticketmodel = new TicketModel();
         TicketController tc = new TicketController(ticketmodel,ticketview);
         
-        Scene scene = new Scene(ticketview, 800, 600);
-
+        Scene scene = new Scene(ticketview, 1000, 550);
+        
         primaryStage.setTitle("Ticket Citation System");
         primaryStage.setScene(scene);
         primaryStage.show();
-        primaryStage.setResizable(false);
+        primaryStage.setResizable(true);
     }
 
     /**
