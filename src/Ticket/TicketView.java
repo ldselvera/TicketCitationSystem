@@ -24,7 +24,6 @@ import javafx.scene.text.TextAlignment;
  *
  * @author Selvera
  */
-<<<<<<< HEAD
 public class TicketView extends BorderPane {
 
     private BorderPane root = new BorderPane();
@@ -94,78 +93,6 @@ public class TicketView extends BorderPane {
             + "\nwww.tsc.edu/parking";
 
     public TicketView() {
-=======
-public class TicketView extends BorderPane{
-    
-    private BorderPane root= new BorderPane();
-    private GridPane gridpane= new GridPane();
-    
-    private Label ticketLabel = new Label("Ticket Number");
-    private TextField ticketTF = new TextField();
-    
-    private Label licenseLabel = new Label("License Number");
-    private TextField licenseTF = new TextField();
-    
-    private Label permitLabel = new Label("Permit Number");
-    private TextField permitTF = new TextField();
-    
-    private Label stateLabel = new Label("State");
-    private TextField stateTF= new TextField();
-    
-    private Label vehicleLabel = new Label("Vehicle Model");
-    private TextField vehicleTF = new TextField();
-    
-    private Label colorLabel = new Label("Color");
-    private TextField colorTF = new TextField();
-    
-    private Label violationLabel = new Label("Violation Type");
-    private TextField violationTF = new TextField();
-    
-    private Label dateLabel = new Label("Date (mm/dd/yy)");
-    private TextField dateTF = new TextField();
-    
-    private Label locationLabel = new Label("Location");
-    private TextField locationTF = new TextField();
-    
-    private Label timeLabel = new Label("Time (hh:mm)");
-    private TextField timeTF = new TextField();
-    
-    private Label issuedLabel = new Label("Issued by");
-    private TextField issuedTF = new TextField();
-    
-    private Button pay= new Button ("Paid/Unpaid");
-    private Button submit= new Button ("Submit");
-    private Button left= new Button ("<<");
-    private Button right= new Button (">>");
-    private Button exit= new Button ("Exit");
-  
-    private Text ticketsText = new Text();
-    private Text payment = new Text();
-    
-    Label titleLabel = new Label("Parking Citation");
-    
-    Image image1 = new Image("logo.PNG");
-    ImageView imageIV = new ImageView(image1);
-    
-    String paystring = "\n\t\t\tPAYMENTS"
-            +"\nPayments can be made at the following office:"
-            + "\n\t\tBussiness Office, Tandy 107"
-            +"\n\tMonday thru Friday 8:00 am-5:00 pm\n"
-            + "\t$25 per citation, other fees may apply"
-            +"\n\t\t$100 for boot removal\n"
-            + "Payments can be mailed to the following address:\n"
-            + "\t\t\t\tTSC"
-            +"\n\t\t\tC/O Finance Dept"
-            +"\n\t\tAttn: Parking Enforcement"
-            +"\n\t\t\t80 Fort Brown\n"
-            + "\t\tBrownsville, TX 78520"
-            +"\n\t\tDO NOT MAIL CASH!"
-            +"\nFor more information parking citations please visit:"
-            +"\nwww.tsc.edu/parking";
-    
-   
-    public  TicketView(){
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
         imageIV.setFitHeight(50);
         imageIV.setFitWidth(50);
         HBox hbox0 = new HBox(imageIV, titleLabel);
@@ -173,7 +100,6 @@ public class TicketView extends BorderPane{
 
         payment.setText(paystring);
         payment.setTextAlignment(TextAlignment.LEFT);
-<<<<<<< HEAD
 
         VBox vbox1 = new VBox(getSubmit(), getPay(), getLeftDisplay(), getRightDisplay(), getExit());
 
@@ -187,28 +113,11 @@ public class TicketView extends BorderPane{
         HBox hbox8 = new HBox(locationTF, colorTF, issuedTF);
         HBox hbox9 = new HBox(violationLabel, vehicleLabel);
         HBox hbox10 = new HBox(violationTF, vehicleTF);
-=======
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-        
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-        HBox hbox10 = new HBox(violationTF, vehicleTF);
-                
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
 
         hbox2.setSpacing(90);
         hbox5.setSpacing(80);
         hbox7.setSpacing(120);
         hbox9.setSpacing(80);
-<<<<<<< HEAD
         hbox9.setSpacing(80);
 
         gridpane.add(hbox2, 1, 1);
@@ -220,41 +129,18 @@ public class TicketView extends BorderPane{
         gridpane.add(hbox9, 1, 7);
         gridpane.add(hbox10, 1, 8);
 
-=======
-                hbox9.setSpacing(80);
-        
-        gridpane.add(hbox2, 1, 1);
-       gridpane.add(hbox4,1, 2);
-       gridpane.add(hbox5, 1, 3);
-       gridpane.add(hbox6, 1, 4);
-       gridpane.add(hbox7, 1, 5);
-       gridpane.add(hbox8, 1, 6);
-       gridpane.add(hbox9, 1, 7);
-       gridpane.add(hbox10, 1, 8);
-       
-       
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
         hbox0.setAlignment(Pos.CENTER);
         this.setTop(hbox0);
         this.setCenter(gridpane);
         this.setLeft(vbox1);
         this.setRight(payment);
     }
-<<<<<<< HEAD
 
     public void updateTicketView(Ticket currentTicket) {
 
         String ticket = currentTicket.getTicket();
         String license = currentTicket.getLicense();
         String permit = currentTicket.getPermit();
-=======
-  
-    public void updateTicketView(Ticket currentTicket){
-           
-        String ticket = currentTicket.getTicket();
-        String license = currentTicket.getLicense();
-        String permit=currentTicket.getPermit();
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
         String state = currentTicket.getState();
         String vehicle = currentTicket.getVehicle();
         String color = currentTicket.getColor();
@@ -264,7 +150,6 @@ public class TicketView extends BorderPane{
         String time = currentTicket.getTime();
         String issued = currentTicket.getIssued();
         String paid = currentTicket.getPaid();
-<<<<<<< HEAD
 
       
         ticketsText.setText(" ");
@@ -316,263 +201,11 @@ public class TicketView extends BorderPane{
 
         ticketsText.setTextAlignment(TextAlignment.CENTER);
 
-=======
-			
-	this.getChildren().clear();
-        ticketsText.setText(" ");
-        imageIV.setFitHeight(50);
-        imageIV.setFitWidth(50);
-        HBox hbox0 = new HBox(imageIV, titleLabel);
-        titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-
-        payment.setText(paystring);
-        payment.setTextAlignment(TextAlignment.LEFT);
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-        
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-         HBox hbox10 = new HBox(violationTF, vehicleTF);
-
-        hbox2.setSpacing(90);
-        hbox5.setSpacing(80);
-        hbox7.setSpacing(120);
-        hbox9.setSpacing(80);
-
-        gridpane.add(hbox2, 1, 1);
-        gridpane.add(hbox4,1, 2);
-        gridpane.add(hbox5, 1, 3);
-        gridpane.add(hbox6, 1, 4);
-        gridpane.add(hbox7, 1, 5);
-        gridpane.add(hbox8, 1, 6);
-        gridpane.add(hbox9, 1, 7);
-        gridpane.add(hbox10, 1, 8);
-  
-        hbox0.setAlignment(Pos.CENTER);
-        
-        ticketsText.setText("Ticket: "+ticket+"\n"
-                            +"License: "+license+"\n"
-                            +"Permit: "+permit+"\n"
-                            +"State: "+state+"\n"
-                            +"Vehicle Model: "+vehicle+"\n"
-                            +"Color: "+color+"\n"
-                            +"Violation: "+violation+"\n"
-                            +"Date: "+date+"\n"
-                            +"Location: "+location+"\n"
-                            +"Time: "+time+"\n"
-                            +"Issued by: "+issued+"\n"
-                            +"Paid Status: "+paid);
-       
-        ticketsText.setLineSpacing(3);
-        ticketsText.setFont(Font.font(15));
-        ticketsText.setTextAlignment(TextAlignment.LEFT);
-		
-	this.setTop(hbox0);
-        this.setCenter(gridpane);
-        this.setLeft(vbox1);
-        this.setRight(payment);
-        this.setBottom(ticketsText);
-	}
-    
-    public void invalidTicketLeftView(){
-
-	String ticket  ="";
-	String license="";
-	String permit    ="";
-	String state = "";
-	String vehicle = "";
-	String color = "";
-	String violation = "";
-	String date = "";
-	String location = "";
-	String time = "";
-	String issued = "";
-			
-	this.getChildren().clear();
-        imageIV.setFitHeight(50);
-        imageIV.setFitWidth(50);
-        HBox hbox0 = new HBox(imageIV, titleLabel);
-        titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-
-        payment.setText(paystring);
-        payment.setTextAlignment(TextAlignment.LEFT);
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-               
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-        HBox hbox10 = new HBox(violationTF, vehicleTF);    
-
-        hbox2.setSpacing(90);
-        hbox5.setSpacing(80);
-        hbox7.setSpacing(120);
-                hbox9.setSpacing(80);
-
-       gridpane.add(hbox2, 1, 1);
-       gridpane.add(hbox4,1, 2);
-       gridpane.add(hbox5, 1, 3);
-       gridpane.add(hbox6, 1, 4);
-       gridpane.add(hbox7, 1, 5);
-       gridpane.add(hbox8, 1, 6);
-       gridpane.add(hbox9, 1, 7);
-       gridpane.add(hbox10, 1, 8);
-        
-        hbox0.setAlignment(Pos.CENTER);
-        ticketsText.setTextAlignment(TextAlignment.CENTER);
-        
-        ticketsText.setText("Please press '>>' to display the first ticket.");
-       
-        ticketsText.setLineSpacing(10);
-        ticketsText.setFont(Font.font(15));
-        ticketsText.setTextAlignment(TextAlignment.LEFT);
-		
-	this.setTop(hbox0);
-        this.setCenter(gridpane);
-        this.setLeft(vbox1);
-        this.setRight(payment);
-        this.setBottom(ticketsText);	
-	}
-    
-    public void invalidTicketRightView(){
-
-	String ticket  ="";
-	String license="";
-	String permit    ="";
-	String state = "";
-	String vehicle = "";
-	String color = "";
-	String violation = "";
-	String date = "";
-	String location = "";
-	String time = "";
-	String issued = "";
-			
-	this.getChildren().clear();
-        imageIV.setFitHeight(50);
-        imageIV.setFitWidth(50);
-        HBox hbox0 = new HBox(imageIV, titleLabel);
-        titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-
-        payment.setText(paystring);
-        payment.setTextAlignment(TextAlignment.LEFT);
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-                
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-        HBox hbox10 = new HBox(violationTF, vehicleTF);
-
-        hbox2.setSpacing(90);
-        hbox5.setSpacing(80);
-        hbox7.setSpacing(120);
-                hbox9.setSpacing(80);
-
-        gridpane.add(hbox2, 1, 1);
-       gridpane.add(hbox4,1, 2);
-       gridpane.add(hbox5, 1, 3);
-       gridpane.add(hbox6, 1, 4);
-       gridpane.add(hbox7, 1, 5);
-       gridpane.add(hbox8, 1, 6);
-       gridpane.add(hbox9, 1, 7);
-       gridpane.add(hbox10, 1, 8);
-        
-        hbox0.setAlignment(Pos.CENTER);
-        
-        ticketsText.setText("End of Results.\nPlease press '<<' to display the last ticket.");
-        ticketsText.setTextAlignment(TextAlignment.CENTER);
-       
-        ticketsText.setLineSpacing(10);
-        ticketsText.setFont(Font.font(15));
-        ticketsText.setTextAlignment(TextAlignment.LEFT);
-		
-	this.setTop(hbox0);
-        this.setCenter(gridpane);
-        this.setLeft(vbox1);
-        this.setRight(payment);
-        this.setBottom(ticketsText);	
-	}
-
-    public void invalidPay(){
-	
-        String ticket  ="";
-	String license="";
-	String permit    ="";
-	String state = "";
-	String vehicle = "";
-	String color = "";
-	String violation = "";
-	String date = "";
-	String location = "";
-	String time = "";
-        String issued = "";
-			
-	this.getChildren().clear();
-        imageIV.setFitHeight(50);
-        imageIV.setFitWidth(50);
-        HBox hbox0 = new HBox(imageIV, titleLabel);
-        titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-
-        payment.setText(paystring);
-        payment.setTextAlignment(TextAlignment.LEFT);
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-        HBox hbox10 = new HBox(violationTF, vehicleTF);
-
-        hbox2.setSpacing(90);
-        hbox5.setSpacing(80);
-        hbox7.setSpacing(120);
-                hbox9.setSpacing(80);
-
-       gridpane.add(hbox2, 1, 1);
-       gridpane.add(hbox4,1, 2);
-       gridpane.add(hbox5, 1, 3);
-       gridpane.add(hbox6, 1, 4);
-       gridpane.add(hbox7, 1, 5);
-       gridpane.add(hbox8, 1, 6);
-       gridpane.add(hbox9, 1, 7);
-       gridpane.add(hbox10, 1, 8);
-        
-        hbox0.setAlignment(Pos.CENTER);
-        ticketsText.setTextAlignment(TextAlignment.CENTER);
-        
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
         ticketsText.setText("Please press '<<' or '>>' to display a ticket to modify its paid status.");
 
         ticketsText.setLineSpacing(10);
         ticketsText.setFont(Font.font(15));
         ticketsText.setTextAlignment(TextAlignment.LEFT);
-<<<<<<< HEAD
 
         this.setBottom(ticketsText);
     }
@@ -581,75 +214,11 @@ public class TicketView extends BorderPane{
 
         ticketsText.setTextAlignment(TextAlignment.CENTER);
 
-=======
-		
-	this.setTop(hbox0);
-        this.setCenter(gridpane);
-        this.setLeft(vbox1);
-        this.setRight(payment);
-        this.setBottom(ticketsText);	
-	}
-
-    public void invalidSubmit(){
-	
-        String ticket  ="";
-	String license="";
-	String permit    ="";
-	String state = "";
-	String vehicle = "";
-	String color = "";
-	String violation = "";
-	String date = "";
-	String location = "";
-	String time = "";
-	String issued = "";
-			
-	this.getChildren().clear();
-        imageIV.setFitHeight(50);
-        imageIV.setFitWidth(50);
-        HBox hbox0 = new HBox(imageIV, titleLabel);
-        titleLabel.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-
-        payment.setText(paystring);
-        payment.setTextAlignment(TextAlignment.LEFT);
-        
-        VBox vbox1= new VBox(getSubmit(), getPay(),getLeftDisplay(), getRightDisplay(), getExit());
-               
-        HBox hbox2= new HBox(ticketLabel, licenseLabel, stateLabel);
-        HBox hbox4= new HBox( ticketTF, licenseTF, stateTF);
-        hbox4.setSpacing(1);
-        HBox hbox5= new HBox(dateLabel,permitLabel, timeLabel);
-        HBox hbox6= new HBox(dateTF, permitTF, timeTF);
-        hbox6.setSpacing(3);
-        HBox hbox7= new HBox(locationLabel,colorLabel, issuedLabel );
-        HBox hbox8= new HBox(locationTF,colorTF, issuedTF);
-        HBox hbox9 =  new HBox(violationLabel, vehicleLabel);
-        HBox hbox10 = new HBox(violationTF, vehicleTF);
-
-        hbox2.setSpacing(90);
-        hbox5.setSpacing(80);
-        hbox7.setSpacing(120);
-                hbox9.setSpacing(80);
-
-       gridpane.add(hbox2, 1, 1);
-       gridpane.add(hbox4,1, 2);
-       gridpane.add(hbox5, 1, 3);
-       gridpane.add(hbox6, 1, 4);
-       gridpane.add(hbox7, 1, 5);
-       gridpane.add(hbox8, 1, 6);
-       gridpane.add(hbox9, 1, 7);
-       gridpane.add(hbox10, 1, 8);
-        
-        hbox0.setAlignment(Pos.CENTER);
-        ticketsText.setTextAlignment(TextAlignment.CENTER);
-        
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
         ticketsText.setText("Please enter a valid Ticket Number.");
 
         ticketsText.setLineSpacing(10);
         ticketsText.setFont(Font.font(15));
         ticketsText.setTextAlignment(TextAlignment.LEFT);
-<<<<<<< HEAD
 
         this.setBottom(ticketsText);
     }
@@ -682,32 +251,6 @@ public class TicketView extends BorderPane{
 
     }
 
-=======
-		
-	this.setTop(hbox0);
-        this.setCenter(gridpane);
-        this.setLeft(vbox1);
-        this.setRight(payment);
-        this.setBottom(ticketsText);	
-	}
- 
-    public void clearFields()
-	{
-		ticketTF.clear();
-		licenseTF.clear();
-		permitTF.clear();
-		stateTF.clear();
-		vehicleTF.clear();
-		colorTF.clear();
-		violationTF.clear();
-		dateTF.clear();
-		locationTF.clear();
-		timeTF.clear();
-                issuedTF.clear();
-		
-	}
-    
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
     /**
      * @return the ticketLabel
      */

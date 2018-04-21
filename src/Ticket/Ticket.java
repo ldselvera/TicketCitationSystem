@@ -13,10 +13,7 @@ package Ticket;
  * @author Selvera
  */
 public class Ticket {
-<<<<<<< HEAD
 
-=======
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
     private String ticket;
     private String license;
     private String permit;
@@ -30,26 +27,14 @@ public class Ticket {
     private String issued;
     private String paid;
 
-<<<<<<< HEAD
     /**
      *
-=======
-    
-    /**
-     * 
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
      */
     public Ticket() {
     }
 
-<<<<<<< HEAD
     /**
      *
-=======
-    
-    /**
-     * 
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
      * @param ticket
      * @param license
      * @param permit
@@ -61,19 +46,11 @@ public class Ticket {
      * @param location
      * @param time
      * @param issued
-<<<<<<< HEAD
      * @param paid
      * @
      */
     public Ticket(String ticket, String license, String permit, String state, String vehicle, String color,
             String violationType, String date, String location, String time, String issued, String paid) {
-=======
-     * @param paid 
-     * @
-     */
-    public Ticket(String ticket, String license, String permit, String state, String vehicle, String color, 
-                  String violationType, String date, String location, String time, String issued, String paid){
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
         this.ticket = ticket;
         this.license = license;
         this.permit = permit;
@@ -85,11 +62,7 @@ public class Ticket {
         this.location = location;
         this.time = time;
         this.issued = issued;
-<<<<<<< HEAD
         this.paid = paid;
-=======
-        this.paid=paid;
->>>>>>> 7a8aa16bfd237dc508332d516e5406ddb96a479d
     }
 
     /**
